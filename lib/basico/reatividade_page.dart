@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ReatividadePage extends StatelessWidget {
+
   final _counter = 0.obs;
+  
 
   ReatividadePage({super.key});
 
