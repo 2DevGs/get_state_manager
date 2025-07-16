@@ -64,14 +64,12 @@ class TiposOBSPage extends StatelessWidget {
             ElevatedButton(
               onPressed: () {
                 aluno['id'] = 50;
-                aluno.refresh();
               },
               child: const Text('Alterar ID'),
             ),
             ElevatedButton(
               onPressed: () {
                 jornadas.assign('Jornada Flutter');
-                jornadas.refresh();
               },
               child: const Text('Adicionar Jornada'),
             ),
