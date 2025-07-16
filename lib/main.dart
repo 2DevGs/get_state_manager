@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get_state_manager/controllers/getxcontroller_example/controller.dart';
-import 'package:get_state_manager/getx_widget/getx_widget_page.dart';
 
 import 'atualizacao/atuzalizacao_objetos_page.dart';
 import 'basico/reatividade_page.dart';
 import 'controllers/controllers_home_page.dart';
+import 'controllers/getxcontroller_example/controller.dart';
 import 'controllers/getxcontroller_example/getx_controller_example_page.dart';
 import 'getx_widget/getx_widget_controller.dart';
+import 'getx_widget/getx_widget_page.dart';
 import 'home_page.dart';
+import 'local_state_widget/local_state_widget_page.dart';
 import 'tipos/tipo_obs_page.dart';
 import 'tipos/tipo_reativos_genericos_nullos_page.dart';
 import 'tipos/tipo_reativos_genericos_page.dart';
@@ -73,6 +74,10 @@ class MyApp extends StatelessWidget {
           binding: BindingsBuilder.put(
             () => GetxWidgetController(),
           ),
+        ),
+        GetPage(
+          name: '/localStateWidget',
+          page: () => const LocalStateWidgetPage(),
         ),
       ],
     );
