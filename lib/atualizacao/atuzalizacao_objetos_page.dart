@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_state_manager/atualizacao/usuario_model.dart';
-import 'package:get_state_manager/tipos/model/aluno.dart';
 
 class AtuzalizacaoObjetosPage extends StatelessWidget {
   final alunoModel = UsuarioModel(
