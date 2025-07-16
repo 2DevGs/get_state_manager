@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_state_manager/controllers/getxcontroller_example/controller.dart';
+import 'package:get_state_manager/getx_widget/getx_widget_page.dart';
 
 import 'atualizacao/atuzalizacao_objetos_page.dart';
 import 'basico/reatividade_page.dart';
 import 'controllers/controllers_home_page.dart';
 import 'controllers/getxcontroller_example/getx_controller_example_page.dart';
+import 'getx_widget/getx_widget_controller.dart';
 import 'home_page.dart';
 import 'tipos/tipo_obs_page.dart';
 import 'tipos/tipo_reativos_genericos_nullos_page.dart';
@@ -22,31 +24,56 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       getPages: [
-        GetPage(name: '/', page: () => const HomePage()),
-        GetPage(name: '/basico', page: () => ReatividadePage()),
-        GetPage(name: '/tiposReativos', page: () => TipoReativosPage()),
+        GetPage(
+          name: '/',
+          page: () => const HomePage(),
+        ),
+        GetPage(
+          name: '/basico',
+          page: () => ReatividadePage(),
+        ),
+        GetPage(
+          name: '/tiposReativos',
+          page: () => TipoReativosPage(),
+        ),
         GetPage(
             name: '/tiposReativosGenericos',
             page: () => TipoReativosGenericosPage()),
         GetPage(
-            name: '/tiposReativosGenericosNullos',
-            page: () => TipoReativosGenericosNullosPage()),
-        GetPage(name: '/tiposObs', page: () => TiposOBSPage()),
+          name: '/tiposReativosGenericosNullos',
+          page: () => TipoReativosGenericosNullosPage(),
+        ),
         GetPage(
-            name: '/atualizacaoObjetos', page: () => AtuzalizacaoObjetosPage()),
+          name: '/tiposObs',
+          page: () => TiposOBSPage(),
+        ),
         GetPage(
-            name: '/controllers',
-            page: () => const ControllersHomePage(),
-            children: [
-              GetPage(
-                name: '/getxcontroller',
-                binding: BindingsBuilder(() {
+          name: '/atualizacaoObjetos',
+          page: () => AtuzalizacaoObjetosPage(),
+        ),
+        GetPage(
+          name: '/controllers',
+          page: () => const ControllersHomePage(),
+          children: [
+            GetPage(
+              name: '/getxcontroller',
+              binding: BindingsBuilder(
+                () {
                   // Get.put(Controller());
                   Get.lazyPut(() => Controller());
-                }),
-                page: () => const GetxControllerExamplePage(),
-              )
-            ]),
+                },
+              ),
+              page: () => const GetxControllerExamplePage(),
+            ),
+          ],
+        ),
+        GetPage(
+          name: '/getxWidget',
+          page: () => const GetxWidgetPage(),
+          binding: BindingsBuilder.put(
+            () => GetxWidgetController(),
+          ),
+        ),
       ],
     );
   }
