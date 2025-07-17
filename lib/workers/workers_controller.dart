@@ -17,11 +17,17 @@ class WorkersController extends GetxController {
     // );
     // _workers.add(everWorker);
 
-    final onceWorker = once<String>(_nome, (nome) {
-      print('Executando o worker once');
-      print(nome);
-    });
-    _workers.add(onceWorker);
+    // final onceWorker = once<String>(_nome, (nome) {
+    //   print('Executando o worker once');
+    //   print(nome);
+    // });
+    // _workers.add(onceWorker);
+
+    final intervalWorker = interval<String>(_nome, (nome) {
+      print('##############################WORKER INTERVAL #############################');
+      print('############################## $nome #############################');
+    }, time: const Duration(seconds: 2));
+    _workers.add((intervalWorker));
 
     super.onInit();
   }
