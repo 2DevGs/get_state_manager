@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_state_manager/workers/workers_controller.dart';
 
 import 'atualizacao/atuzalizacao_objetos_page.dart';
 import 'basico/reatividade_page.dart';
@@ -14,6 +15,7 @@ import 'tipos/tipo_obs_page.dart';
 import 'tipos/tipo_reativos_genericos_nullos_page.dart';
 import 'tipos/tipo_reativos_genericos_page.dart';
 import 'tipos/tipo_reativos_page.dart';
+import 'workers/workers_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -78,6 +80,13 @@ class MyApp extends StatelessWidget {
         GetPage(
           name: '/localStateWidget',
           page: () => const LocalStateWidgetPage(),
+        ),
+        GetPage(
+          name: '/workers',
+          binding: BindingsBuilder.put(
+            () => WorkersController(),
+          ),
+          page: () => const WorkersPage(),
         ),
       ],
     );

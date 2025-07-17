@@ -68,6 +68,12 @@ class HomePage extends StatelessWidget {
               },
               child: const Text('Local State Widget'),
             ),
+            TextButton(
+              onPressed: () {
+                Get.toNamed('/workers');
+              },
+              child: const Text('Workers'),
+            ),
           ],
         ),
       ),
