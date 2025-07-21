@@ -74,6 +74,12 @@ class HomePage extends StatelessWidget {
               },
               child: const Text('Workers'),
             ),
+            TextButton(
+              onPressed: () {
+                Get.toNamed('/firstRebuild');
+              },
+              child: const Text('First Rebuild'),
+            ),
           ],
         ),
       ),

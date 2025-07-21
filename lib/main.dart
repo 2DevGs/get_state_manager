@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get_state_manager/workers/workers_controller.dart';
 
 import 'atualizacao/atuzalizacao_objetos_page.dart';
 import 'basico/reatividade_page.dart';
 import 'controllers/controllers_home_page.dart';
 import 'controllers/getxcontroller_example/controller.dart';
 import 'controllers/getxcontroller_example/getx_controller_example_page.dart';
+import 'firstRebuild/first_rebuild_page.dart';
 import 'getx_widget/getx_widget_controller.dart';
 import 'getx_widget/getx_widget_page.dart';
 import 'home_page.dart';
@@ -15,6 +15,7 @@ import 'tipos/tipo_obs_page.dart';
 import 'tipos/tipo_reativos_genericos_nullos_page.dart';
 import 'tipos/tipo_reativos_genericos_page.dart';
 import 'tipos/tipo_reativos_page.dart';
+import 'workers/workers_controller.dart';
 import 'workers/workers_page.dart';
 
 void main() {
@@ -87,6 +88,10 @@ class MyApp extends StatelessWidget {
             () => WorkersController(),
           ),
           page: () => const WorkersPage(),
+        ),
+        GetPage(
+          name: '/firstRebuild',
+          page: () => FirstRebuildPage(),
         ),
       ],
     );
