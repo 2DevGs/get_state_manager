@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
 
 class ExampleFullLifeCyclePage extends StatelessWidget {
+  const ExampleFullLifeCyclePage({super.key});
 
-  const ExampleFullLifeCyclePage({ super.key });
-
-   @override
-   Widget build(BuildContext context) {
-       return Scaffold(
-           appBar: AppBar(title: const Text('Full Life Cycle'),),
-           body: Container(),
-       );
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(title: const Text('Full Life Cycle'),),
+        body: Container(),
+    );
   }
 }
