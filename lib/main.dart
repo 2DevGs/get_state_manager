@@ -4,9 +4,13 @@ import 'package:get/get.dart';
 import 'atualizacao/atuzalizacao_objetos_page.dart';
 import 'basico/reatividade_page.dart';
 import 'controllers/controllers_home_page.dart';
+import 'controllers/full_life_cycle_controller/example_full_life_cycle_controller.dart';
+import 'controllers/full_life_cycle_controller/example_full_life_cycle_page.dart';
 import 'controllers/getxcontroller_example/controller.dart';
 import 'controllers/getxcontroller_example/getx_controller_example_page.dart';
 import 'firstRebuild/first_rebuild_page.dart';
+import 'getbuilder/get_builder_controller.dart';
+import 'getbuilder/get_builder_page.dart';
 import 'getx_widget/getx_widget_controller.dart';
 import 'getx_widget/getx_widget_page.dart';
 import 'home_page.dart';
@@ -91,7 +95,17 @@ class MyApp extends StatelessWidget {
         ),
         GetPage(
           name: '/firstRebuild',
-          page: () => FirstRebuildPage(),
+          page: () => const FirstRebuildPage(),
+        ),
+        GetPage(
+          name: '/getBuilder',
+          binding: BindingsBuilder.put(() => GetBuilderController()),
+          page: () => const GetBuilderPage(),
+        ),
+        GetPage(
+          name: '/fullLifeCycleController',
+          binding: BindingsBuilder.put(() => ExampleFullLifeCycleController()),
+          page: () => const ExampleFullLifeCyclePage(),
         ),
       ],
     );

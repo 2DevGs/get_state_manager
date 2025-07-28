@@ -80,6 +80,18 @@ class HomePage extends StatelessWidget {
               },
               child: const Text('First Rebuild'),
             ),
+            TextButton(
+              onPressed: () {
+                Get.toNamed('/getBuilder');
+              },
+              child: const Text('Get Builder'),
+            ),
+            TextButton(
+              onPressed: () {
+                Get.toNamed('/fullLifeCycleController');
+              },
+              child: const Text('Full Life Cycle Controller'),
+            ),
           ],
         ),
       ),
